@@ -16,7 +16,6 @@
   --shadow: 0 20px 50px rgba(34, 43, 86, 0.12);
   --radius: 22px;
   --success: #1d9b7a;
-  --warning: #ffb347;
 }
 
 html {
@@ -123,7 +122,7 @@ textarea {
   padding: 13px 20px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn:hover {
@@ -203,7 +202,7 @@ h1 {
   margin-top: 20px;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: rgba(29, 155, 122, 0.08);
   border: 1px solid rgba(29, 155, 122, 0.2);
   color: var(--success);

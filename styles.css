@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="StoreCopy AI - أداة ذكية لإنشاء أوصاف المنتجات، العناوين، النقاط المميزة، ونسخ البيع بسرعة. جربها مجانًا ثم اشتري الوصول الكامل مدى الحياة."
+      content="StoreCopy AI - منتج رقمي عربي/أوروبي يساعدك على إنشاء أوصاف المنتجات، العناوين، النقاط المميزة، ونسخ البيع بسرعة، مع تجربة مجانية ثم شراء مدى الحياة."
     />
     <meta name="theme-color" content="#4f46e5" />
-    <title>StoreCopy AI | جرب مجاني ثم شراء مدى الحياة</title>
+    <title>StoreCopy AI | جرب مجانًا ثم اشتري مدى الحياة</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +20,7 @@
   <body>
     <header class="site-header">
       <div class="container nav-wrap">
-        <div class="brand" aria-label="StoreCopy AI logo">
+        <div class="brand" aria-label="StoreCopy AI Logo">
           <div class="brand-mark">S</div>
           <div class="brand-name">StoreCopy AI</div>
         </div>
@@ -43,11 +43,11 @@
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <span class="eyebrow">أداة AI للمتاجر الإلكترونية</span>
-            <h1>أنشئ أوصاف المنتجات في ثوانٍ فقط.</h1>
+            <span class="eyebrow">منتج رقمي رائد لكتابة المنتجات</span>
+            <h1>أنشئ أوصاف المنتجات، العناوين، والنسخ التسويقية في ثوانٍ.</h1>
             <p>
               StoreCopy AI يساعدك على تحويل اسم المنتج وميزاته إلى وصف احترافي، عنوان جذاب،
-              نقاط مميزة، ونسخة إعلانية جاهزة للعرض في متجرك أو صفحاتك التسويقية.
+              نقاط مميزة، ونسخة إعلانية جاهزة للعرض في متجرك، صفحاتك، أو حملاتك التسويقية.
             </p>
 
             <div class="cta-row">
@@ -57,7 +57,7 @@
 
             <div class="trial-banner">
               <strong>5 استخدامات مجانية</strong>
-              <span>ثم افتح الوصول الكامل مدى الحياة</span>
+              <span>ثم فتح كامل الوصول مدى الحياة</span>
             </div>
 
             <div class="trust-row">
@@ -67,11 +67,11 @@
               </div>
               <div>
                 <strong>4.9/5</strong>
-                <span>تقييم المستخدمين</span>
+                <span>تقييم المتسوقين</span>
               </div>
               <div>
-                <strong>100%</strong>
-                <span>تجربة سريعة</span>
+                <strong>3x</strong>
+                <span>سرعة في الإطلاق</span>
               </div>
             </div>
           </div>
@@ -129,8 +129,8 @@
           <div class="feature-grid">
             <article class="feature-card">
               <div class="feature-icon">⚡</div>
-              <h3>إنشاء سري��</h3>
-              <p>احصل على وصف منتج، عنوان، وملاحظات مميزة في ثوانٍ بدلًا من ساعات الكتابة اليدوية.</p>
+              <h3>إنشاء سريع</h3>
+              <p>احصل على وصف منتج، عنوان، ونقاط مميزة في ثوانٍ بدلًا من ساعات الكتابة اليدوية.</p>
             </article>
 
             <article class="feature-card">
@@ -186,7 +186,7 @@
                     <option value="premium">فاخرة</option>
                     <option value="bold">قوية</option>
                     <option value="friendly">ودودة</option>
-                    <option value="luxury">لُuxury</option>
+                    <option value="luxury">Luxury</option>
                   </select>
                 </label>
 
@@ -382,4 +382,3 @@
     <script src="app.js"></script>
   </body>
 </html>
-

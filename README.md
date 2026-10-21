@@ -10,8 +10,7 @@ const templates = {
   ar: {
     professional: {
       headline: "{productName} مصمم لتقديم أداء موثوق في كل يوم",
-      description:
-        "{productName} تم تصميمه لتوفير تجربة استخدام سلسة وموثوقة في حياتك اليومية. يجمع بين الأداء القوي، سهولة الاستخدام، والهوية الاحترافية المناسبة للمتاجر والعلامات التجارية الحديثة.",
+      description: "{productName} تم تصميمه لتوفير تجربة استخدام سلسة وموثوقة في حياتك اليومية. يجمع بين الأداء القوي، سهولة الاستخدام، والهوية الاحترافية المناسبة للمتاجر والعلامات التجارية الحديثة.",
       bullets: [
         "أداء موثوق وفعال",
         "تصميم عملي ومريح",
@@ -22,8 +21,7 @@ const templates = {
     },
     premium: {
       headline: "{productName} بتصميم أنيق وجودة فائقة",
-      description:
-        "يمنحك {productName} تجربة مميزة تجمع بين الأداء العالي والهوية الأنيقة. تم تصميمه ليضيف لمسة احترافية وفخامة إلى كل استخدام يومي، مع سهولة استيعاب المنتج في الحياة اليومية.",
+      description: "يمنحك {productName} تجربة مميزة تجمع بين الأداء العالي والهوية الأنيقة. تم تصميمه ليضيف لمسة احترافية وفخامة إلى كل استخدام يومي، مع سهولة استيعاب المنتج في الحياة اليومية.",
       bullets: [
         "تصميم فاخر ومريح",
         "جودة عالية ومتانة",
@@ -34,8 +32,7 @@ const templates = {
     },
     bold: {
       headline: "{productName} بقوة وأداء لا يلين",
-      description:
-        "تم تصميم {productName} ليمنحك أداءً قويًا وموثوقًا في كل لحظة. مناسب للمتطلبات اليومية، بيئة العمل السريعة، وأصحاب المشاريع الذين يحتاجون إلى حل عملي مستقر ومريح.",
+      description: "تم تصميم {productName} ليمنحك أداءً قويًا وموثوقًا في كل لحظة. مناسب للمتطلبات اليومية، بيئة العمل السريعة، وأصحاب المشاريع الذين يحتاجون إلى حل عملي مستقر ومريح.",
       bullets: [
         "أداء قوي وثابت",
         "موثوق في الاستخدام اليومي",
@@ -46,8 +43,7 @@ const templates = {
     },
     friendly: {
       headline: "{productName} سهل جدًا في الاستخدام",
-      description:
-        "{productName} مصمم ليجعل تجربة المستخدم أسهل وأبسط. مع تصميمه العملي وخصائصه المفيدة، يساعدك على الحصول على نتائج ممتازة دون تعقيد أو عناء، في كل مرة تستخدمه.",
+      description: "{productName} مصمم ليجعل تجربة المستخدم أسهل وأبسط. مع تصميمه العملي وخصائصه المفيدة، يساعدك على الحصول على نتائج ممتازة دون تعقيد أو عناء، في كل مرة تستخدمه.",
       bullets: [
         "سهل الاستخدام",
         "عملي ومريح",
@@ -57,9 +53,8 @@ const templates = {
       ad: "حل عملي ومريح يجعلك تستمتع بتجربة استخدام أسهل في كل يوم."
     },
     luxury: {
-      headline: "{productName} بتفاصيل فاخرة وتجرب�� استثنائية",
-      description:
-        "يجمع {productName} بين الفخامة والأداء العملي، ليمنحك تجربة خاصة تليق بالأسلوب الراقي. مع تفاصيل دقيقة وتصميم أنيق، يصبح اختياري المفضل للمتاجر والذوق المتطور.",
+      headline: "{productName} بتفاصيل فاخرة وتجربة استثنائية",
+      description: "يجمع {productName} بين الفخامة والأداء العملي، ليمنحك تجربة خاصة تليق بالأسلوب الراقي. مع تفاصيل دقيقة وتصميم أنيق، يصبح اختياري المفضل للمتاجر والذوق المتطور.",
       bullets: [
         "ذوق راقٍ ومميز",
         "تفاصيل فاخرة",
@@ -72,8 +67,7 @@ const templates = {
   en: {
     professional: {
       headline: "{productName} built for reliable everyday performance",
-      description:
-        "{productName} is designed to deliver smooth and dependable performance for daily use. It combines practical design, efficient features, and strong customer value for modern stores and product-driven brands.",
+      description: "{productName} is designed to deliver smooth and dependable performance for daily use. It combines practical design, efficient features, and strong customer value for modern stores and product-driven brands.",
       bullets: [
         "Reliable day-to-day performance",
         "Simple and practical design",
@@ -84,8 +78,7 @@ const templates = {
     },
     premium: {
       headline: "{productName} with a refined, premium finish",
-      description:
-        "{productName} brings together strong performance and a premium visual identity. Built for users who want both style and function, it adds value to everyday routines and product pages alike.",
+      description: "{productName} brings together strong performance and a premium visual identity. Built for users who want both style and function, it adds value to everyday routines and product pages alike.",
       bullets: [
         "Premium design and finish",
         "High-quality build",
@@ -96,8 +89,7 @@ const templates = {
     },
     bold: {
       headline: "{productName} delivers power and reliability",
-      description:
-        "{productName} is built to perform when it matters most. It is designed for busy routines, active lifestyles, and modern buyers who expect quality, consistency, and confidence at every use.",
+      description: "{productName} is built to perform when it matters most. It is designed for busy routines, active lifestyles, and modern buyers who expect quality, consistency, and confidence at every use.",
       bullets: [
         "Strong and dependable",
         "Works for fast-paced routines",
@@ -108,8 +100,7 @@ const templates = {
     },
     friendly: {
       headline: "{productName} made to be easy and convenient",
-      description:
-        "{productName} is designed to make everyday life easier. With a practical layout and thoughtful features, it helps customers enjoy a smoother and more convenient experience every time they use it.",
+      description: "{productName} is designed to make everyday life easier. With a practical layout and thoughtful features, it helps customers enjoy a smoother and more convenient experience every time they use it.",
       bullets: [
         "Easy to use",
         "Comfortable and practical",
@@ -120,8 +111,7 @@ const templates = {
     },
     luxury: {
       headline: "{productName} crafted for a refined lifestyle",
-      description:
-        "{productName} blends elegance, precision, and usability into one refined design. It is created for customers who want premium details, strong value, and a memorable experience in every interaction.",
+      description: "{productName} blends elegance, precision, and usability into one refined design. It is created for customers who want premium details, strong value, and a memorable experience in every interaction.",
       bullets: [
         "Luxury-inspired finish",
         "Premium quality",
@@ -134,8 +124,7 @@ const templates = {
   es: {
     professional: {
       headline: "{productName} pensado para un rendimiento fiable",
-      description:
-        "{productName} está diseñado para ofrecer un rendimiento fiable y práctico en el uso diario. Combina un diseño funcional, calidad y valor para marcas modernas y comercios digitales.",
+      description: "{productName} está diseñado para ofrecer un rendimiento fiable y práctico en el uso diario. Combina un diseño funcional, calidad y valor para marcas modernas y comercios digitales.",
       bullets: [
         "Rendimiento fiable",
         "Diseño práctico",
@@ -146,8 +135,7 @@ const templates = {
     },
     premium: {
       headline: "{productName} con un acabado premium y elegante",
-      description:
-        "{productName} combina rendimiento y estilo para ofrecer una experiencia moderna y premium. Está pensado para quienes valora tanto la belleza como la utilidad en su vida diaria.",
+      description: "{productName} combina rendimiento y estilo para ofrecer una experiencia moderna y premium. Está pensado para quienes valora tanto la belleza como la utilidad en su vida diaria.",
       bullets: [
         "Acabado premium",
         "Calidad superior",
@@ -158,8 +146,7 @@ const templates = {
     },
     bold: {
       headline: "{productName} con fuerza y confiabilidad",
-      description:
-        "{productName} está desarrollado para ofrecer fuerza, consistencia y valor real en cada uso. Es una opción ideal para marcas que necesitan soluciones funcionales y confiables.",
+      description: "{productName} está desarrollado para ofrecer fuerza, consistencia y valor real en cada uso. Es una opción ideal para marcas que necesitan soluciones funcionales y confiables.",
       bullets: [
         "Fuerte y confiable",
         "Diseño práctico",
@@ -170,8 +157,7 @@ const templates = {
     },
     friendly: {
       headline: "{productName} fácil de usar y muy práctico",
-      description:
-        "{productName} está pensado para hacer la vida diaria más sencilla. Su diseño práctico y sus funciones útiles permiten una experiencia clara, fácil y agradable para clientes de todos los niveles.",
+      description: "{productName} está pensado para hacer la vida diaria más sencilla. Su diseño práctico y sus funciones útiles permiten una experiencia clara, fácil y agradable para clientes de todos los niveles.",
       bullets: [
         "Fácil de usar",
         "Muy práctico",
@@ -182,8 +168,7 @@ const templates = {
     },
     luxury: {
       headline: "{productName} con un estilo refinado y exclusivo",
-      description:
-        "{productName} combina lujo, precisión y utilidad en un diseño sofisticado. Está pensado para clientes que valoran cada detalle y buscan una experiencia premium en cada uso.",
+      description: "{productName} combina lujo, precisión y utilidad en un diseño sofisticado. Está pensado para clientes que valoran cada detalle y buscan una experiencia premium en cada uso.",
       bullets: [
         "Estilo refinado",
         "Detalles premium",
@@ -196,8 +181,7 @@ const templates = {
   fr: {
     professional: {
       headline: "{productName} pensé pour une utilisation fiable et pratique",
-      description:
-        "{productName} est conçu pour offrir une expérience fiable et fluide au quotidien. Il combine un design fonctionnel, des performances solides et une vraie valeur pour les marques modernes.",
+      description: "{productName} est conçu pour offrir une expérience fiable et fluide au quotidien. Il combine un design fonctionnel, des performances solides et une vraie valeur pour les marques modernes.",
       bullets: [
         "Performance fiable",
         "Design pratique",
@@ -208,8 +192,7 @@ const templates = {
     },
     premium: {
       headline: "{productName} au design premium et élégant",
-      description:
-        "{productName} associe performance et style dans une expérience premium. Il est conçu pour les clients qui recherchent à la fois qualité, élégance et confort au quotidien.",
+      description: "{productName} associe performance et style dans une expérience premium. Il est conçu pour les clients qui recherchent à la fois qualité, élégance et confort au quotidien.",
       bullets: [
         "Design premium",
         "Qualité supérieure",
@@ -220,8 +203,7 @@ const templates = {
     },
     bold: {
       headline: "{productName} avec puissance et fiabilité",
-      description:
-        "{productName} est conçu pour offrir une puissance constante et une fiabilité durable. Il convient aux clients qui recherchent une solution solide, pratique et sans compromis.",
+      description: "{productName} est conçu pour offrir une puissance constante et une fiabilité durable. Il convient aux clients qui recherchent une solution solide, pratique et sans compromis.",
       bullets: [
         "Puissance et fiabilité",
         "Très pratique",
@@ -232,8 +214,7 @@ const templates = {
     },
     friendly: {
       headline: "{productName} simple, agréable et facile à utiliser",
-      description:
-        "{productName} a été conçu pour rendre la vie quotidienne plus simple. Avec ses fonctionnalités utiles et son design pratique, il offre une expérience fluide, agréable et sans complications.",
+      description: "{productName} a été conçu pour rendre la vie quotidienne plus simple. Avec ses fonctionnalités utiles et son design pratique, il offre une expérience fluide, agréable et sans complications.",
       bullets: [
         "Simple à utiliser",
         "Très pratique",
@@ -244,8 +225,7 @@ const templates = {
     },
     luxury: {
       headline: "{productName} avec un style raffiné et luxueux",
-      description:
-        "{productName} combine élégance, précision et utilité dans un design haut de gamme. Il est fait pour les clients qui recherchent un produit premium et une expérience mémorable.",
+      description: "{productName} combine élégance, précision et utilité dans un design haut de gamme. Il est fait pour les clients qui recherchent un produit premium et une expérience mémorable.",
       bullets: [
         "Style raffiné",
         "Détails premium",
@@ -258,8 +238,7 @@ const templates = {
   de: {
     professional: {
       headline: "{productName} für zuverlässige Alltagstauglichkeit",
-      description:
-        "{productName} wurde entwickelt, um im Alltag eine starke und zuverlässige Leistung zu bieten. Mit praktischem Design, klarer Funktionalität und gutem Mehrwert eignet es sich ideal für moderne Shops und Marken.",
+      description: "{productName} wurde entwickelt, um im Alltag eine starke und zuverlässige Leistung zu bieten. Mit praktischem Design, klarer Funktionalität und gutem Mehrwert eignet es sich ideal für moderne Shops und Marken.",
       bullets: [
         "Zuverlässige Leistung",
         "Praxisnahes Design",
@@ -270,8 +249,7 @@ const templates = {
     },
     premium: {
       headline: "{productName} mit hochwertigem Premium-Look",
-      description:
-        "{productName} verbindet starke Leistung mit einem modernen Premium-Design. Es ist ideal für Käufer, die Style und Funktionalität zugleich schätzen.",
+      description: "{productName} verbindet starke Leistung mit einem modernen Premium-Design. Es ist ideal für Käufer, die Style und Funktionalität zugleich schätzen.",
       bullets: [
         "Premium-Design",
         "Hohe Qualität",
@@ -282,8 +260,7 @@ const templates = {
     },
     bold: {
       headline: "{productName} mit starker Leistung und Stabilität",
-      description:
-        "{productName} wurde für starke Leistung, Stabilität und Alltagstauglichkeit entwickelt. Es ist die richtige Wahl für Kunden, die Qualität und Vertrauen in jedem Einsatz erwarten.",
+      description: "{productName} wurde für starke Leistung, Stabilität und Alltagstauglichkeit entwickelt. Es ist die richtige Wahl für Kunden, die Qualität und Vertrauen in jedem Einsatz erwarten.",
       bullets: [
         "Starke Leistung",
         "Zuverlässig im Einsatz",
@@ -294,8 +271,7 @@ const templates = {
     },
     friendly: {
       headline: "{productName} einfach zu bedienen und angenehm im Einsatz",
-      description:
-        "{productName} ist so gebaut, dass der Alltag einfacher und angenehmer wird. Mit intuitiver Nutzung und nützlichen Funktionen schafft es eine klare, angenehme Erfahrung für jeden Kunden.",
+      description: "{productName} ist so gebaut, dass der Alltag einfacher und angenehmer wird. Mit intuitiver Nutzung und nützlichen Funktionen schafft es eine klare, angenehme Erfahrung für jeden Kunden.",
       bullets: [
         "Einfach zu bedienen",
         "Praktisch und komfortabel",
@@ -306,8 +282,7 @@ const templates = {
     },
     luxury: {
       headline: "{productName} mit elegantem Luxusgefühl",
-      description:
-        "{productName} verbindet Luxus, Präzision und Funktionalität in einem stilvollen Design. Es ist perfekt für Kunden, die jeden Detail wertschätzen und ein hochwertiges Erlebnis erwarten.",
+      description: "{productName} verbindet Luxus, Präzision und Funktionalität in einem stilvollen Design. Es ist perfekt für Kunden, die jeden Detail wertschätzen und ein hochwertiges Erlebnis erwarten.",
       bullets: [
         "Elegantes Design",
         "Premium-Details",
@@ -320,8 +295,7 @@ const templates = {
   pt: {
     professional: {
       headline: "{productName} pensado para desempenho confiável no dia a dia",
-      description:
-        "{productName} foi projetado para oferecer um desempenho confiável e funcional no uso diário. Combina design prático, qualidade e valor real para lojas e marcas modernas.",
+      description: "{productName} foi projetado para oferecer um desempenho confiável e funcional no uso diário. Combina design prático, qualidade e valor real para lojas e marcas modernas.",
       bullets: [
         "Desempenho confiável",
         "Design prático",
@@ -332,8 +306,7 @@ const templates = {
     },
     premium: {
       headline: "{productName} com acabamento premium e refinado",
-      description:
-        "{productName} combina desempenho, design moderno e qualidade premium. Foi pensado para clientes que valorizam funcionalidade e estilo em um mesmo produto.",
+      description: "{productName} combina desempenho, design moderno e qualidade premium. Foi pensado para clientes que valorizam funcionalidade e estilo em um mesmo produto.",
       bullets: [
         "Acabamento premium",
         "Qualidade superior",
@@ -344,8 +317,7 @@ const templates = {
     },
     bold: {
       headline: "{productName} com força e confiabilidade",
-      description:
-        "{productName} foi criado para oferecer potência, consistência e valor real em cada uso. É uma escolha ideal para marcas que precisam de soluções robustas e eficientes.",
+      description: "{productName} foi criado para oferecer potência, consistência e valor real em cada uso. É uma escolha ideal para marcas que precisam de soluções robustas e eficientes.",
       bullets: [
         "Potência e confiabilidade",
         "Uso diário eficiente",
@@ -356,8 +328,7 @@ const templates = {
     },
     friendly: {
       headline: "{productName} simples, prático e fácil de usar",
-      description:
-        "{productName} foi pensado para tornar a rotina mais simples e agradável. Com design prático e recursos úteis, ele oferece uma experiência mais confortável e eficiente para qualquer cliente.",
+      description: "{productName} foi pensado para tornar a rotina mais simples e agradável. Com design prático e recursos úteis, ele oferece uma experiência mais confortável e eficiente para qualquer cliente.",
       bullets: [
         "Fácil de usar",
         "Muito prático",
@@ -368,8 +339,7 @@ const templates = {
     },
     luxury: {
       headline: "{productName} com um toque luxuoso e sofisticado",
-      description:
-        "{productName} combina luxo, precisão e utilidade em um design sofisticado. Foi pensado para clientes que valorizam detalhes premium e uma experiência memorável em cada uso.",
+      description: "{productName} combina luxo, precisão e utilidade em um design sofisticado. Foi pensado para clientes que valorizam detalhes premium e uma experiência memorável em cada uso.",
       bullets: [
         "Detalhes premium",
         "Qualidade superior",
@@ -558,4 +528,3 @@ if (continueTrialBtn) continueTrialBtn.addEventListener("click", closeModal);
 
 renderOutput();
 renderTrialStatus();
-
