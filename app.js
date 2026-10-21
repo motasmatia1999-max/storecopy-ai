@@ -15,6 +15,8 @@
   --line: #e6eaf5;
   --shadow: 0 20px 50px rgba(34, 43, 86, 0.12);
   --radius: 22px;
+  --success: #1d9b7a;
+  --warning: #ffb347;
 }
 
 html {
@@ -23,8 +25,8 @@ html {
 
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
-  background: linear-gradient(180deg, #f6f8ff 0%, #f3f5ff 100%);
+  font-family: "Cairo", "Inter", sans-serif;
+  background: linear-gradient(180deg, #f9faff 0%, #f3f5ff 100%);
   color: var(--text);
 }
 
@@ -58,7 +60,7 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(246, 248, 255, 0.8);
+  background: rgba(246, 248, 255, 0.82);
   backdrop-filter: blur(22px);
   border-bottom: 1px solid rgba(230, 234, 245, 0.9);
 }
@@ -92,6 +94,7 @@ textarea {
 .brand-name {
   font-weight: 800;
   letter-spacing: -0.04em;
+  font-size: 1.08rem;
 }
 
 .main-nav,
@@ -108,7 +111,7 @@ textarea {
 
 .link-btn {
   color: var(--text);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .btn {
@@ -120,7 +123,7 @@ textarea {
   padding: 13px 20px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
 .btn:hover {
@@ -194,6 +197,21 @@ h1 {
   gap: 14px;
   flex-wrap: wrap;
   margin-top: 26px;
+}
+
+.trial-banner {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(29, 155, 122, 0.08);
+  border: 1px solid rgba(29, 155, 122, 0.2);
+  color: var(--success);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  flex-wrap: wrap;
 }
 
 .trust-row {
@@ -413,6 +431,19 @@ h1 {
   padding: 28px;
 }
 
+.trial-box {
+  margin-top: 18px;
+  background: rgba(79, 70, 229, 0.05);
+  border: 1px solid rgba(79, 70, 229, 0.12);
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
 .copy-form {
   display: grid;
   gap: 18px;
@@ -549,20 +580,20 @@ select:focus {
 }
 
 .plan-name {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 800;
   margin-bottom: 12px;
 }
 
 .price {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   letter-spacing: -0.06em;
   font-weight: 900;
   margin-bottom: 18px;
 }
 
 .price span {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--muted);
   font-weight: 600;
 }
@@ -623,6 +654,64 @@ select:focus {
   font-weight: 800;
 }
 
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 22, 36, 0.52);
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  z-index: 50;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-box {
+  width: min(520px, 100%);
+  background: white;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.close-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--panel-alt);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.modal-box p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 960px) {
   .feature-grid,
   .pricing-grid,
@@ -676,5 +765,9 @@ select:focus {
 
   .window {
     width: 100%;
+  }
+
+  .modal-actions {
+    flex-direction: column;
   }
 }

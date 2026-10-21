@@ -1,3 +1,11 @@
+const STORAGE_KEY = "storecopy_ai_state";
+const TRIAL_LIMIT = 5;
+
+const defaultState = {
+  trialUsage: 0,
+  unlocked: false
+};
+
 const templates = {
   ar: {
     professional: {
@@ -22,7 +30,7 @@ const templates = {
         "مناسب للمتاجر العصرية",
         "تجربة مستخدم ممتازة"
       ],
-      ad: "اكتشف تجربة فاخرة تجمع بين الأداء المتميز والتصميم الأنيق."
+      ad: "اكتشف تجربة فاخرة تجمع بين الأداء المميز والتصميم الأنيق."
     },
     bold: {
       headline: "{productName} بقوة وأداء لا يلين",
@@ -49,7 +57,7 @@ const templates = {
       ad: "حل عملي ومريح يجعلك تستمتع بتجربة استخدام أسهل في كل يوم."
     },
     luxury: {
-      headline: "{productName} بتفاصيل فاخرة وتجربة استثنائية",
+      headline: "{productName} بتفاصيل فاخرة وتجرب�� استثنائية",
       description:
         "يجمع {productName} بين الفخامة والأداء العملي، ليمنحك تجربة خاصة تليق بالأسلوب الراقي. مع تفاصيل دقيقة وتصميم أنيق، يصبح اختياري المفضل للمتاجر والذوق المتطور.",
       bullets: [
@@ -167,10 +175,10 @@ const templates = {
       bullets: [
         "Fácil de usar",
         "Muy práctico",
-        "Ideal para el día a día",
+        "Comodidad diaria",
         "Diseñado para la vida real"
       ],
-      ad: "Un pequeño cambio que hace tu rutina mucho más cómoda."
+      ad: "Una solución simple que hace tu rutina mucho más cómoda."
     },
     luxury: {
       headline: "{productName} con un estilo refinado y exclusivo",
@@ -303,7 +311,7 @@ const templates = {
       bullets: [
         "Elegantes Design",
         "Premium-Details",
-        "Hohe Qualität",
+        "Hochwertige Verarbeitung",
         "Luxuriöses Erlebnis"
       ],
       ad: "Heben Sie Ihr Angebot mit einem Produkt hervor, das Luxus und Funktion verbindet."
@@ -373,23 +381,40 @@ const templates = {
   }
 };
 
+function getState() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (!saved) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultState));
+      return { ...defaultState };
+    }
+    return { ...defaultState, ...JSON.parse(saved) };
+  } catch {
+    return { ...defaultState };
+  }
+}
+
+function saveState(nextState) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(nextState));
+}
+
 function buildCopy(productName, features, tone, language) {
-  const finalName = productName.trim() || "Premium Product";
+  const finalName = productName.trim() || "منتج Premium";
   const featureList = features
     .split(/\n|,/) 
     .map((item) => item.trim())
     .filter(Boolean);
 
   const safeFeatures = featureList.length ? featureList.slice(0, 4) : [
-    "High quality materials",
-    "Modern design",
-    "Easy to use",
-    "Reliable performance"
+    "جودة عالية",
+    "تصميم عصري",
+    "سهل الاستخدام",
+    "أداء موثوق"
   ];
 
-  const validLanguage = templates[language] ? language : "en";
+  const validLanguage = templates[language] ? language : "ar";
   const finalTone = tone || "professional";
-  const template = templates[validLanguage][finalTone] || templates.en.professional;
+  const template = templates[validLanguage][finalTone] || templates.ar.professional;
 
   const headline = template.headline.replace(/{productName}/g, finalName);
   const description = template.description.replace(/{productName}/g, finalName);
@@ -401,6 +426,61 @@ function buildCopy(productName, features, tone, language) {
     bullets: safeFeatures,
     ad
   };
+}
+
+function renderTrialStatus() {
+  const state = getState();
+  const remaining = Math.max(0, TRIAL_LIMIT - state.trialUsage);
+  const trialCountEl = document.getElementById("trialCount");
+  if (trialCountEl) trialCountEl.textContent = String(remaining);
+
+  if (state.unlocked) {
+    const trialBox = document.getElementById("trialNotice");
+    if (trialBox) {
+      trialBox.innerHTML = '<strong>الوصول الحالي:</strong> <span>مفتوح بالكامل مدى الحياة</span>';
+    }
+  }
+}
+
+function checkTrialLimit() {
+  const state = getState();
+  if (state.unlocked) return false;
+  if (state.trialUsage >= TRIAL_LIMIT) {
+    openModal();
+    return true;
+  }
+  return false;
+}
+
+function openModal() {
+  const modal = document.getElementById("unlockModal");
+  if (!modal) return;
+  modal.classList.remove("hidden");
+  modal.setAttribute("aria-hidden", "false");
+}
+
+function closeModal() {
+  const modal = document.getElementById("unlockModal");
+  if (!modal) return;
+  modal.classList.add("hidden");
+  modal.setAttribute("aria-hidden", "true");
+}
+
+function purchaseLifetime() {
+  const state = getState();
+  state.unlocked = true;
+  saveState(state);
+  closeModal();
+  renderTrialStatus();
+  alert("تم فتح الوصول الكامل مدى الحياة بنجاح.");
+}
+
+function incrementTrialUsage() {
+  const state = getState();
+  if (state.unlocked) return;
+  state.trialUsage += 1;
+  saveState(state);
+  renderTrialStatus();
 }
 
 const form = document.getElementById("copyForm");
@@ -431,6 +511,12 @@ function renderOutput() {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+
+  if (checkTrialLimit()) {
+    return;
+  }
+
+  incrementTrialUsage();
   renderOutput();
 });
 
@@ -443,22 +529,33 @@ copyTextBtn.addEventListener("click", async () => {
   const resultText = [
     headlineOutput.textContent,
     descriptionOutput.textContent,
-    "\nFeatures:\n" + Array.from(bulletsOutput.querySelectorAll("li")).map((li) => li.textContent).join("\n"),
-    "\nAd copy:\n" + adOutput.textContent
+    "\nنقاط الميزة:\n" + Array.from(bulletsOutput.querySelectorAll("li")).map((li) => li.textContent).join("\n"),
+    "\nنسخة إعلانية:\n" + adOutput.textContent
   ].join("\n\n");
 
   try {
     await navigator.clipboard.writeText(resultText);
-    copyTextBtn.textContent = "Copied";
+    copyTextBtn.textContent = "تم النسخ";
     setTimeout(() => {
-      copyTextBtn.textContent = "Copy text";
+      copyTextBtn.textContent = "نسخ النص";
     }, 1200);
   } catch (error) {
-    copyTextBtn.textContent = "Copy failed";
+    copyTextBtn.textContent = "فشل النسخ";
     setTimeout(() => {
-      copyTextBtn.textContent = "Copy text";
+      copyTextBtn.textContent = "نسخ النص";
     }, 1200);
   }
 });
 
+const closeModalBtn = document.getElementById("closeModal");
+if (closeModalBtn) closeModalBtn.addEventListener("click", closeModal);
+
+const buyLifetimeBtn = document.getElementById("buyLifetimeBtn");
+if (buyLifetimeBtn) buyLifetimeBtn.addEventListener("click", purchaseLifetime);
+
+const continueTrialBtn = document.getElementById("continueTrialBtn");
+if (continueTrialBtn) continueTrialBtn.addEventListener("click", closeModal);
+
 renderOutput();
+renderTrialStatus();
+

@@ -1,508 +1,385 @@
-* {
-  box-sizing: border-box;
-}
-
-:root {
-  --bg: #f5f7ff;
-  --panel: #ffffff;
-  --primary: #5b4cf0;
-  --primary-dark: #4839d9;
-  --secondary: #ebebff;
-  --text: #1d2333;
-  --muted: #667085;
-  --border: #e8ebf3;
-  --shadow: 0 18px 45px rgba(44, 53, 96, 0.12);
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
-
-.container {
-  width: min(1120px, calc(100% - 32px));
-  margin: 0 auto;
-}
-
-.section {
-  padding: 88px 0;
-}
-
-.topbar {
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(14px);
-  background: rgba(245, 247, 255, 0.8);
-  border-bottom: 1px solid rgba(232, 235, 243, 0.8);
-  z-index: 99;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 72px;
-  gap: 16px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 800;
-}
-
-.brand-badge {
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--primary), #7a6dff);
-  color: white;
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  box-shadow: var(--shadow);
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  color: var(--muted);
-}
-
-nav a {
-  transition: color 0.2s ease;
-}
-
-nav a:hover {
-  color: var(--text);
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 20px;
-  border-radius: 12px;
-  border: 1px solid transparent;
-  font-weight: 700;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  cursor: pointer;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: white;
-  box-shadow: 0 16px 28px rgba(91, 76, 240, 0.24);
-}
-
-.btn-secondary {
-  background: white;
-  border-color: var(--border);
-  color: var(--text);
-}
-
-.full {
-  width: 100%;
-}
-
-.hero {
-  padding: 72px 0 46px;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 40px;
-}
-
-.eyebrow {
-  display: inline-block;
-  margin-bottom: 16px;
-  color: var(--primary-dark);
-  background: rgba(91, 76, 240, 0.08);
-  border: 1px solid rgba(91, 76, 240, 0.14);
-  padding: 8px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-h1 {
-  margin: 0 0 18px;
-  font-size: clamp(2.4rem, 4vw, 4.5rem);
-  line-height: 1.05;
-  letter-spacing: -0.05em;
-}
-
-.hero-copy p {
-  margin: 0;
-  font-size: 1.08rem;
-  line-height: 1.8;
-  color: var(--muted);
-  max-width: 620px;
-}
-
-.cta-row {
-  display: flex;
-  gap: 16px;
-  margin-top: 24px;
-  flex-wrap: wrap;
-}
-
-.mini-list {
-  list-style: none;
-  padding: 0;
-  margin: 26px 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  color: var(--muted);
-  font-size: 0.96rem;
-}
-
-.mini-list li {
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 8px 12px;
-}
-
-.hero-card {
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 18px;
-  box-shadow: var(--shadow);
-}
-
-.card-header {
-  display: flex;
-  gap: 8px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--border);
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.dot.red { background: #ff6b6b; }
-.dot.yellow { background: #f4c95d; }
-.dot.green { background: #4ecf6d; }
-
-.card-body {
-  padding-top: 16px;
-  display: grid;
-  gap: 10px;
-}
-
-.prompt-chip {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: var(--secondary);
-  border: 1px solid #ddd9ff;
-  color: var(--primary-dark);
-  font-weight: 600;
-}
-
-.sample-output {
-  margin-top: 8px;
-  color: var(--text);
-  background: rgba(245, 247, 255, 0.9);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 16px;
-  line-height: 1.7;
-}
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 34px;
-}
-
-.section-heading.left {
-  text-align: left;
-}
-
-.section-heading h2 {
-  margin: 0;
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  letter-spacing: -0.04em;
-}
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.feature-card,
-.example-card {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 24px 20px;
-  box-shadow: 0 12px 20px rgba(18, 28, 62, 0.04);
-}
-
-.feature-card .icon {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  border-radius: 14px;
-  background: var(--secondary);
-  font-size: 1.4rem;
-  margin-bottom: 16px;
-}
-
-.feature-card h3,
-.example-card h3 {
-  margin: 0 0 10px;
-  font-size: 1.2rem;
-}
-
-.feature-card p,
-.example-card p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.generator-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 24px;
-  align-items: flex-start;
-}
-
-.generator-form-wrap,
-.results-wrap {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 26px;
-  box-shadow: var(--shadow);
-}
-
-.copy-form {
-  display: grid;
-  gap: 18px;
-  margin-top: 20px;
-}
-
-label {
-  display: grid;
-  gap: 10px;
-  color: var(--text);
-  font-weight: 600;
-}
-
-input,
-textarea,
-select {
-  width: 100%;
-  background: #f9faff;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 14px 16px;
-  color: var(--text);
-  outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: rgba(91, 76, 240, 0.6);
-  box-shadow: 0 0 0 4px rgba(91, 76, 240, 0.08);
-}
-
-.two-col {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.result-box {
-  margin-top: 20px;
-  display: grid;
-  gap: 22px;
-}
-
-.result-group {
-  display: grid;
-  gap: 10px;
-}
-
-.label {
-  margin: 0;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  font-weight: 700;
-}
-
-#headlineOutput,
-#descriptionOutput,
-#adOutput {
-  margin: 0;
-  line-height: 1.6;
-}
-
-#descriptionOutput,
-#adOutput {
-  color: var(--muted);
-}
-
-#bulletsOutput {
-  margin: 0;
-  padding-left: 20px;
-  color: var(--muted);
-  display: grid;
-  gap: 8px;
-  line-height: 1.6;
-}
-
-.result-actions {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.example-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.example-card span {
-  display: inline-block;
-  margin-bottom: 10px;
-  color: var(--primary-dark);
-  font-weight: 700;
-  font-size: 0.83rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.cta-box {
-  background: linear-gradient(135deg, #22262f, #161c2d);
-  border-radius: 28px;
-  padding: 34px 28px;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  box-shadow: var(--shadow);
-}
-
-.cta-box .eyebrow {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.cta-box h2 {
-  margin: 0;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-}
-
-.footer {
-  padding: 20px 0 40px;
-  color: var(--muted);
-}
-
-.footer-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 920px) {
-  .hero-grid,
-  .generator-grid,
-  .feature-grid,
-  .example-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .feature-grid,
-  .example-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-  nav {
-    display: none;
-  }
-
-  .nav {
-    justify-content: space-between;
-  }
-
-  .generator-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cta-box {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .two-col {
-    grid-template-columns: 1fr;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .cta-row {
-    flex-direction: column;
-  }
-}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="StoreCopy AI - أداة ذكية لإنشاء أوصاف المنتجات، العناوين، النقاط المميزة، ونسخ البيع بسرعة. جربها مجانًا ثم اشتري الوصول الكامل مدى الحياة."
+    />
+    <meta name="theme-color" content="#4f46e5" />
+    <title>StoreCopy AI | جرب مجاني ثم شراء مدى الحياة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <div class="brand" aria-label="StoreCopy AI logo">
+          <div class="brand-mark">S</div>
+          <div class="brand-name">StoreCopy AI</div>
+        </div>
+
+        <nav class="main-nav" aria-label="التنقل الرئيسي">
+          <a href="#features">المميزات</a>
+          <a href="#demo">التجربة</a>
+          <a href="#pricing">الأسعار</a>
+          <a href="#faq">الأسئلة</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="#demo" class="link-btn">تجربة</a>
+          <a href="#pricing" class="btn btn-primary">اشترِ الآن</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">أداة AI للمتاجر الإلكترونية</span>
+            <h1>أنشئ أوصاف المنتجات في ثوانٍ فقط.</h1>
+            <p>
+              StoreCopy AI يساعدك على تحويل اسم المنتج وميزاته إلى وصف احترافي، عنوان جذاب،
+              نقاط مميزة، ونسخة إعلانية جاهزة للعرض في متجرك أو صفحاتك التسويقية.
+            </p>
+
+            <div class="cta-row">
+              <a href="#demo" class="btn btn-primary">جرب الآن مجانًا</a>
+              <a href="#pricing" class="btn btn-secondary">شراء مدى الحياة</a>
+            </div>
+
+            <div class="trial-banner">
+              <strong>5 استخدامات مجانية</strong>
+              <span>ثم افتح الوصول الكامل مدى الحياة</span>
+            </div>
+
+            <div class="trust-row">
+              <div>
+                <strong>10k+</strong>
+                <span>نسخة تم إنشاؤها</span>
+              </div>
+              <div>
+                <strong>4.9/5</strong>
+                <span>تقييم المستخدمين</span>
+              </div>
+              <div>
+                <strong>100%</strong>
+                <span>تجربة سريعة</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="معاينة المنتج">
+            <div class="window">
+              <div class="window-bar">
+                <span class="dot red"></span>
+                <span class="dot amber"></span>
+                <span class="dot green"></span>
+              </div>
+
+              <div class="window-body">
+                <div class="badge-pill">المنتج: شاحن لاسلكي</div>
+                <div class="badge-pill">النبرة: فاخرة</div>
+                <div class="badge-pill">اللغة: العربية</div>
+
+                <div class="mini-box">
+                  <p class="mini-label">العنوان</p>
+                  <h3>شاحن لاسلكي سريع وذكي</h3>
+                </div>
+
+                <div class="mini-box">
+                  <p class="mini-label">الوصف</p>
+                  <p>
+                    يجمع بين الأداء العالي والتصميم الأنيق، ليمنحك تجربة شحن فعّالة ومريحة طوال اليوم.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="logos-strip">
+        <div class="container logos-wrap">
+          <span>مستخدم من قبل متاجر ومنصات رقمية</span>
+          <div class="logo-list">
+            <span>Shopify</span>
+            <span>WooCommerce</span>
+            <span>Amazon</span>
+            <span>Instagram</span>
+            <span>العلامات التجارية</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="container">
+          <div class="section-head center">
+            <span class="eyebrow dark">لماذا هذا المنتج؟</span>
+            <h2>كل ما تحتاجه لكتابة وصف المنتج بشكل أسرع وأحسن.</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-icon">⚡</div>
+              <h3>إنشاء سري��</h3>
+              <p>احصل على وصف منتج، عنوان، وملاحظات مميزة في ثوانٍ بدلًا من ساعات الكتابة اليدوية.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">🎯</div>
+              <h3>تحويل أعلى</h3>
+              <p>استخدم لغة مقنعة تركز على الفوائد والمزايا التي تجعل العميل يشتري بسرعة.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">🌍</div>
+              <h3>لغات متعددة</h3>
+              <p>يدعم العربية والإنجليزية والإسبانية والفرنسية والألمانية وغيرها.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">🛍️</div>
+              <h3>مناسب للمتاجر</h3>
+              <p>يمكنك استخدامه على Shopify، WooCommerce، صفحات المنتجات، الإعلانات، والسوشيال ميديا.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="demo" class="section generator-section">
+        <div class="container generator-grid">
+          <div class="generator-panel">
+            <div class="section-head left">
+              <span class="eyebrow dark">تجربة مجانية</span>
+              <h2>اختبر المنتج الآن</h2>
+            </div>
+
+            <div id="trialNotice" class="trial-box">
+              <strong>استخدامات متبقية:</strong>
+              <span id="trialCount">0</span>
+            </div>
+
+            <form id="copyForm" class="copy-form">
+              <label>
+                اسم المنتج
+                <input id="productName" type="text" value="شاحن لاسلكي" />
+              </label>
+
+              <label>
+                مميزات المنتج
+                <textarea id="productFeatures" rows="5">شحن سريع، تصميم أنيق، مناسب للجوال، هادئ في التشغيل، محمول بسهولة، آمن للبطارية</textarea>
+              </label>
+
+              <div class="two-col">
+                <label>
+                  النبرة
+                  <select id="tone">
+                    <option value="professional">احترافية</option>
+                    <option value="premium">فاخرة</option>
+                    <option value="bold">قوية</option>
+                    <option value="friendly">ودودة</option>
+                    <option value="luxury">لُuxury</option>
+                  </select>
+                </label>
+
+                <label>
+                  اللغة
+                  <select id="language">
+                    <option value="ar">العربية</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="pt">Português</option>
+                  </select>
+                </label>
+              </div>
+
+              <button class="btn btn-primary full" type="submit">إنشاء النص</button>
+            </form>
+          </div>
+
+          <div class="result-panel">
+            <div class="section-head left">
+              <span class="eyebrow dark">النتيجة</span>
+              <h2>نتيجة جاهزة للبيع</h2>
+            </div>
+
+            <div class="result-box">
+              <div class="result-group">
+                <p class="result-label">العنوان</p>
+                <h3 id="headlineOutput">شاحن لاسلكي سريع وذكي</h3>
+              </div>
+
+              <div class="result-group">
+                <p class="result-label">الوصف</p>
+                <p id="descriptionOutput">
+                  يقدم هذا المنتج تجربة شحن سلسة ومريحة مع تصميم أنيق ودعم فني ممتاز، ليكون الخيار المثالي لمن يبحث عن استقرار وسهولة في الاستخدام.
+                </p>
+              </div>
+
+              <div class="result-group">
+                <p class="result-label">نقاط الميزة</p>
+                <ul id="bulletsOutput">
+                  <li>شحن سريع وفعال</li>
+                  <li>تصميم أنيق ومحمول</li>
+                  <li>متوافق مع الأجهزة الحديثة</li>
+                  <li>آمن ومريح للاستخدام اليومي</li>
+                </ul>
+              </div>
+
+              <div class="result-group">
+                <p class="result-label">نسخة إعلانية</p>
+                <p id="adOutput">حل عملي ومريح يساعدك على شحن هاتفك بسهولة وراحة في كل وقت.</p>
+              </div>
+
+              <div class="result-actions">
+                <button class="btn btn-secondary" id="copyTextBtn" type="button">نسخ النص</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section use-cases">
+        <div class="container">
+          <div class="section-head center">
+            <span class="eyebrow dark">الاستخدامات</span>
+            <h2>مثالي للمتاجر الصغيرة والوكالات والأعمال الإلكترونية.</h2>
+          </div>
+
+          <div class="use-case-grid">
+            <div class="use-case-card">
+              <span>متاجر Shopify</span>
+              <h3>إطلاق أسرع</h3>
+              <p>أنشئ وصف المنتجات بسرعة دون إضاعة الوقت في الكتابة اليدوية لكل عنصر.</p>
+            </div>
+            <div class="use-case-card">
+              <span>الوكالات</span>
+              <h3>خدمة أكثر</h3>
+              <p>قدّم محتوى احترافي لعملائك بسرعة أكبر مع جودة عالية وتنسيق متوازن.</p>
+            </div>
+            <div class="use-case-card">
+              <span>البائعون</span>
+              <h3>تحسين المبيعات</h3>
+              <p>اكتب نصوصًا أقوى تشرح المنتج وتزيد الثقة في الشراء وتقلل التردد.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="section pricing-section">
+        <div class="container">
+          <div class="section-head center">
+            <span class="eyebrow dark">الأسعار</span>
+            <h2>اختر الخطة المناسبة لك.</h2>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="price-card">
+              <div class="plan-name">Starter</div>
+              <div class="price"><span>ضع السعر</span></div>
+              <ul>
+                <li>تجربة أولية</li>
+                <li>عدد محدود من الاستعمالات</li>
+                <li>خطة مناسبة للمبتدئين</li>
+              </ul>
+              <a href="#demo" class="btn btn-secondary full">ابدأ</a>
+            </article>
+
+            <article class="price-card highlight">
+              <div class="popular">الأكثر طلبًا</div>
+              <div class="plan-name">Lifetime Access</div>
+              <div class="price"><span>ضع السعر</span></div>
+              <ul>
+                <li>دفع مرة واحدة</li>
+                <li>وصول كامل مدى الحياة</li>
+                <li>كل المزايا مفتوحة</li>
+                <li>مناسب للمالك والعميل</li>
+              </ul>
+              <a href="#demo" class="btn btn-primary full">اشترِ الآن</a>
+            </article>
+
+            <article class="price-card">
+              <div class="plan-name">Agency</div>
+              <div class="price"><span>ضع السعر</span></div>
+              <ul>
+                <li>عدة مستخدمين</li>
+                <li>مناسب للفرق</li>
+                <li>استخدام احترافي</li>
+                <li>أفضل للتوسع</li>
+              </ul>
+              <a href="#demo" class="btn btn-secondary full">للفرق</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section faq-section">
+        <div class="container">
+          <div class="section-head center">
+            <span class="eyebrow dark">الأسئلة الشائعة</span>
+            <h2>أكثر الأسئلة التي يطرحها العملاء.</h2>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>هل المنتج مناسب للمتاجر الإلكترونية؟</h3>
+              <p>نعم، هذا هو الاستخدام الأساسي للمنتج وهو مصمم خصيصًا للمتاجر الإلكترونية والبائعين عبر الإنترنت.</p>
+            </div>
+            <div class="faq-item">
+              <h3>هل يمكن استخدام المنتج في أكثر من لغة؟</h3>
+              <p>نعم، يدعم المنتج اللغات الشائعة مثل العربية والإنجليزية والإسبانية والفرنسية وغيرها.</p>
+            </div>
+            <div class="faq-item">
+              <h3>هل يمكن استخدامه على الهاتف؟</h3>
+              <p>نعم، الموقع مجهز لتبدو تجربة المستخدم ممتازة على الهاتف والكمبيوتر.</p>
+            </div>
+            <div class="faq-item">
+              <h3>هل يمكن فتح الوصول بالكامل بعد الدفع؟</h3>
+              <p>نعم، هذا هو النموذج الذي نستخدمه: تجربة مجانية محدودة ثم فتح كامل بعد الدفع مدى الحياة.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <div class="brand footer-brand">
+          <div class="brand-mark">S</div>
+          <div class="brand-name">StoreCopy AI</div>
+        </div>
+
+        <div class="footer-copy">© 2026 StoreCopy AI. منتج رقمي جاهز للتسويق.</div>
+      </div>
+    </footer>
+
+    <div id="unlockModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3>فتح الوصول الكامل مدى الحياة</h3>
+          <button id="closeModal" class="close-btn" type="button" aria-label="إغلاق">×</button>
+        </div>
+
+        <p>جرب المنتج مجانًا لعدد محدود من الاستعمالات، ثم افتح كل المزايا بعد الدفع.</p>
+
+        <div class="modal-actions">
+          <button id="buyLifetimeBtn" class="btn btn-primary" type="button">شراء مدى الحياة</button>
+          <button id="continueTrialBtn" class="btn btn-secondary" type="button">متابعة التجربة</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
