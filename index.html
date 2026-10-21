@@ -5,30 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="StoreCopy AI generates ecommerce product descriptions, headlines, feature bullets, and ad copy in seconds."
+      content="StoreCopy AI generates premium product descriptions, headlines, feature bullets, and ad copy for ecommerce stores in seconds."
     />
-    <title>StoreCopy AI</title>
+    <meta
+      name="theme-color"
+      content="#4f46e5"
+    />
+    <title>StoreCopy AI | Product Copy Generator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="topbar">
-      <div class="container nav">
+    <header class="site-header">
+      <div class="container nav-wrap">
         <div class="brand">
-          <div class="brand-badge">S</div>
-          <span>StoreCopy AI</span>
+          <div class="brand-mark">S</div>
+          <div>
+            <div class="brand-name">StoreCopy AI</div>
+          </div>
         </div>
-        <nav>
+
+        <nav class="main-nav" aria-label="Main navigation">
           <a href="#features">Features</a>
-          <a href="#generator">Generator</a>
-          <a href="#examples">Examples</a>
+          <a href="#demo">Demo</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
         </nav>
-        <a class="btn btn-primary" href="#generator">Try it now</a>
+
+        <div class="nav-actions">
+          <a href="#demo" class="link-btn">Demo</a>
+          <a href="#pricing" class="btn btn-primary">Start now</a>
+        </div>
       </div>
     </header>
 
@@ -36,81 +48,119 @@
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <span class="eyebrow">AI product copy for online stores</span>
-            <h1>Create product descriptions in seconds</h1>
+            <span class="eyebrow">AI-powered ecommerce writing</span>
+            <h1>Turn a product idea into a high-converting product page.</h1>
             <p>
-              Turn a product name and a few features into a polished product
-              description, a headline, key bullets, and ad copy that are ready
-              to use in your store.
+              StoreCopy AI creates polished product descriptions, feature bullets,
+              headlines, and ad copy in seconds so you can move from idea to sale faster.
             </p>
+
             <div class="cta-row">
-              <a class="btn btn-primary" href="#generator">Generate now</a>
-              <a class="btn btn-secondary" href="#examples">See example</a>
+              <a href="#demo" class="btn btn-primary">Generate now</a>
+              <a href="#pricing" class="btn btn-secondary">See pricing</a>
             </div>
-            <ul class="mini-list">
-              <li>Shopify ready</li>
-              <li>Multi-language</li>
-              <li>Mobile friendly</li>
-            </ul>
+
+            <div class="trust-row">
+              <div>
+                <strong>10k+</strong>
+                <span>product copies</span>
+              </div>
+              <div>
+                <strong>4.9/5</strong>
+                <span>seller rating</span>
+              </div>
+              <div>
+                <strong>3x</strong>
+                <span>faster launches</span>
+              </div>
+            </div>
           </div>
 
-          <div class="hero-card">
-            <div class="card-header">
-              <span class="dot red"></span>
-              <span class="dot yellow"></span>
-              <span class="dot green"></span>
-            </div>
-            <div class="card-body">
-              <div class="prompt-chip">Product: Wireless Charger</div>
-              <div class="prompt-chip">Tone: Premium</div>
-              <div class="prompt-chip">Language: English</div>
-              <div class="sample-output">
-                High-speed charging, sleek, portable, compatible with modern
-                devices.
+          <div class="hero-visual" aria-label="AI Product copy preview">
+            <div class="window">
+              <div class="window-bar">
+                <span class="dot red"></span>
+                <span class="dot amber"></span>
+                <span class="dot green"></span>
+              </div>
+
+              <div class="window-body">
+                <div class="badge-pill">Product: Wireless Charger</div>
+                <div class="badge-pill">Tone: Premium</div>
+                <div class="badge-pill">Language: English</div>
+
+                <div class="mini-box">
+                  <p class="mini-label">Headline</p>
+                  <h3>Fast, sleek, and reliable charging</h3>
+                </div>
+
+                <div class="mini-box">
+                  <p class="mini-label">Description</p>
+                  <p>
+                    Designed for modern lifestyles, this charger delivers powerful performance,
+                    refined style, and reliable daily convenience.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="features" class="features section">
+      <section class="logos-strip">
+        <div class="container logos-wrap">
+          <span>Used by ecommerce teams</span>
+          <div class="logo-list">
+            <span>Shopify</span>
+            <span>WooCommerce</span>
+            <span>Amazon</span>
+            <span>Instagram</span>
+            <span>Brands</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
         <div class="container">
-          <div class="section-heading">
-            <span class="eyebrow">Why sellers use it</span>
-            <h2>Everything your store needs to write product copy fast</h2>
+          <div class="section-head center">
+            <span class="eyebrow dark">Why sellers choose it</span>
+            <h2>Built to turn product details into sales-ready copy.</h2>
           </div>
 
           <div class="feature-grid">
             <article class="feature-card">
-              <div class="icon">⚡</div>
-              <h3>Fast generation</h3>
-              <p>Create full product text in a few seconds instead of writing manually.</p>
+              <div class="feature-icon">⚡</div>
+              <h3>Generate fast</h3>
+              <p>Get ready-to-use product descriptions without wasting hours staring at a blank page.</p>
             </article>
+
             <article class="feature-card">
-              <div class="icon">🧠</div>
-              <h3>Better conversion</h3>
-              <p>Use persuasive language that focuses on benefits and customer value.</p>
+              <div class="feature-icon">🎯</div>
+              <h3>Higher conversion</h3>
+              <p>Focus on impacts, benefits, and customer value to make your pages more persuasive.</p>
             </article>
+
             <article class="feature-card">
-              <div class="icon">🌍</div>
-              <h3>Multi-language</h3>
-              <p>Generate in Arabic, English, Spanish, French, German, and more.</p>
+              <div class="feature-icon">🌍</div>
+              <h3>Global reach</h3>
+              <p>Generate content in Arabic, English, Spanish, French, and more to serve worldwide shops.</p>
             </article>
+
             <article class="feature-card">
-              <div class="icon">🛍️</div>
-              <h3>Ecommerce ready</h3>
-              <p>Perfect for product pages, ads, marketplaces, and social promotion.</p>
+              <div class="feature-icon">🧩</div>
+              <h3>Works everywhere</h3>
+              <p>Use it on Shopify, WooCommerce, product pages, bundles, ads, and socials.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="generator" class="generator section">
+      <section id="demo" class="section generator-section">
         <div class="container generator-grid">
-          <div class="generator-form-wrap">
-            <div class="section-heading left">
-              <span class="eyebrow">Try now</span>
-              <h2>Generate product copy</h2>
+          <div class="generator-panel">
+            <div class="section-head left">
+              <span class="eyebrow dark">Live demo</span>
+              <h2>Generate product copy instantly</h2>
             </div>
 
             <form id="copyForm" class="copy-form">
@@ -121,7 +171,7 @@
 
               <label>
                 Product features
-                <textarea id="productFeatures" rows="4">Fast charging, sleek design, USB-C compatible, travel friendly, safe temperature control</textarea>
+                <textarea id="productFeatures" rows="5">Fast charging, sleek body, USB-C compatible, travel friendly, ultra-safe, premium design</textarea>
               </label>
 
               <div class="two-col">
@@ -149,42 +199,43 @@
                 </label>
               </div>
 
-              <button type="submit" class="btn btn-primary full">Generate copy</button>
+              <button class="btn btn-primary full" type="submit">Generate copy</button>
             </form>
           </div>
 
-          <div class="results-wrap">
-            <div class="section-heading left">
-              <span class="eyebrow">Output</span>
-              <h2>Ready-to-use result</h2>
+          <div class="result-panel">
+            <div class="section-head left">
+              <span class="eyebrow dark">Output</span>
+              <h2>Sales-ready result</h2>
             </div>
 
             <div class="result-box">
               <div class="result-group">
-                <p class="label">Headline</p>
-                <h3 id="headlineOutput">Fast, Sleek, and Reliable Wireless Charging</h3>
+                <p class="result-label">Headline</p>
+                <h3 id="headlineOutput">Fast, sleek, and reliable wireless charging</h3>
               </div>
 
               <div class="result-group">
-                <p class="label">Description</p>
+                <p class="result-label">Description</p>
                 <p id="descriptionOutput">
-                  Designed to keep up with your fast-moving lifestyle, this charger delivers reliable performance with a sleek and modern look. Built for convenience, it combines fast charging with safe temperature control and effortless compatibility for everyday use.
+                  Designed for modern lifestyles, this charger delivers smooth performance,
+                  refined style, and dependable day-to-day convenience for customers who value quality.
                 </p>
               </div>
 
               <div class="result-group">
-                <p class="label">Key features</p>
+                <p class="result-label">Key features</p>
                 <ul id="bulletsOutput">
                   <li>Fast and efficient charging</li>
-                  <li>Compact and travel-friendly design</li>
-                  <li>Compatible with modern devices</li>
-                  <li>Safe and reliable performance</li>
+                  <li>Modern and travel-friendly design</li>
+                  <li>Safe and dependable performance</li>
+                  <li>Made for daily convenience</li>
                 </ul>
               </div>
 
               <div class="result-group">
-                <p class="label">Ad copy</p>
-                <p id="adOutput">Charge smarter. Upgrade your desk and travel setup with a sleek, efficient wireless charger made for everyday performance.</p>
+                <p class="result-label">Ad copy</p>
+                <p id="adOutput">Charge smarter with a sleek, reliable wireless charger designed to fit modern life.</p>
               </div>
 
               <div class="result-actions">
@@ -195,48 +246,118 @@
         </div>
       </section>
 
-      <section id="examples" class="examples section">
+      <section class="section use-cases">
         <div class="container">
-          <div class="section-heading">
-            <span class="eyebrow">Examples</span>
-            <h2>Built for everyday ecommerce use</h2>
+          <div class="section-head center">
+            <span class="eyebrow dark">Use cases</span>
+            <h2>Perfect for ecommerce businesses and marketing teams.</h2>
           </div>
 
-          <div class="example-grid">
-            <div class="example-card">
-              <span>Product</span>
-              <h3>Desk Lamp</h3>
-              <p>Perfect for modern homes and office setups with adjustable lighting and minimalist style.</p>
+          <div class="use-case-grid">
+            <div class="use-case-card">
+              <span>Shopify sellers</span>
+              <h3>Launch products faster</h3>
+              <p>Generate copy for product listings, bundles, and seasonal offers without extra workload.</p>
             </div>
-            <div class="example-card">
-              <span>Product</span>
-              <h3>Fitness Bottle</h3>
-              <p>Ideal for active lifestyles, featuring durable insulation and leak-proof convenience.</p>
+            <div class="use-case-card">
+              <span>Agencies</span>
+              <h3>Serve more clients</h3>
+              <p>Create polished product content for many stores while keeping the process simple and repeatable.</p>
             </div>
-            <div class="example-card">
-              <span>Product</span>
-              <h3>Bluetooth Speaker</h3>
-              <p>Delivers rich sound, portable design, and all-day battery life for music lovers.</p>
+            <div class="use-case-card">
+              <span>Marketplace sellers</span>
+              <h3>Improve searchability</h3>
+              <p>Write better product text that is easier for buyers to understand and trust.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="cta section">
-        <div class="container cta-box">
-          <div>
-            <span class="eyebrow">Ready to launch?</span>
-            <h2>Use StoreCopy AI to simplify product writing</h2>
+      <section id="pricing" class="section pricing-section">
+        <div class="container">
+          <div class="section-head center">
+            <span class="eyebrow dark">Pricing</span>
+            <h2>Simple plans for growing product teams.</h2>
           </div>
-          <a class="btn btn-primary" href="#generator">Start generating</a>
+
+          <div class="pricing-grid">
+            <article class="price-card">
+              <div class="plan-name">Starter</div>
+              <div class="price">$19<span>/month</span></div>
+              <ul>
+                <li>Unlimited quick generations</li>
+                <li>Basic tones</li>
+                <li>English + Arabic</li>
+                <li>Copy to clipboard</li>
+              </ul>
+              <a href="#demo" class="btn btn-secondary full">Try starter</a>
+            </article>
+
+            <article class="price-card highlight">
+              <div class="popular">Popular</div>
+              <div class="plan-name">Pro</div>
+              <div class="price">$39<span>/month</span></div>
+              <ul>
+                <li>Everything in Starter</li>
+                <li>More tones and languages</li>
+                <li>Bulk product copy</li>
+                <li>Premium output quality</li>
+              </ul>
+              <a href="#demo" class="btn btn-primary full">Start pro</a>
+            </article>
+
+            <article class="price-card">
+              <div class="plan-name">Agency</div>
+              <div class="price">$99<span>/month</span></div>
+              <ul>
+                <li>Unlimited client projects</li>
+                <li>Team workspaces</li>
+                <li>Advanced tones</li>
+                <li>Priority support</li>
+              </ul>
+              <a href="#demo" class="btn btn-secondary full">For agencies</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section faq-section">
+        <div class="container">
+          <div class="section-head center">
+            <span class="eyebrow dark">FAQ</span>
+            <h2>Questions people ask before buying.</h2>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>Is it useful for ecommerce stores?</h3>
+              <p>Yes. It is built specifically for store owners, sellers, and marketing teams who need fast, professional copy.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Does it support multiple languages?</h3>
+              <p>Yes. Arabic, English, Spanish, French, German, and Portuguese are supported in this demo version.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Can I use this on mobile?</h3>
+              <p>Yes. The site is fully responsive and optimized for both mobile and desktop.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Is this a full SaaS product?</h3>
+              <p>This is a professional demo MVP designed for quick marketing and validation. It is ready for upgrade to a full SaaS app.</p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container footer-row">
-        <div>© 2026 StoreCopy AI</div>
-        <div>AI product copy generator</div>
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <div class="brand footer-brand">
+          <div class="brand-mark">S</div>
+          <div class="brand-name">StoreCopy AI</div>
+        </div>
+
+        <div class="footer-copy">© 2026 StoreCopy AI. Product copy for modern stores.</div>
       </div>
     </footer>
 

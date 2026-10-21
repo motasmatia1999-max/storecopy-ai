@@ -1,575 +1,680 @@
-const templates = {
-  ar: {
-    professional: {
-      headline: "{productName} مصمم لتقديم أداء ممتاز يوميًا",
-      description:
-        "تم تصميم {productName} ليمنحك تجربة استخدام سلسة وموثوقة في كل يوم. يجمع بين الأداء العالي، التصميم المريح، والسهولة في الاستخدام، ليصبح خيارًا عمليًا واحترافيًا للمنازل والمكاتب والأنشطة اليومية.",
-      bullets: [
-        "أداء موثوق ومميز",
-        "تصميم عملي ومريح",
-        "مناسب للاستخدام اليومي",
-        "حل فعّال وسهل في التطبيق"
-      ],
-      ad: "حل عملي ومريح يضيف راحة أكبر إلى روتينك اليومي."
-    },
-    premium: {
-      headline: "{productName} بتصميم أنيق وجودة فاخرة",
-      description:
-        "يقدم {productName} تجربة فاخرة تجمع بين الأداء المتميز والتصميم الأنيق. مصمم ليمنح المستخدم راحة وثقة، مع تفاصيل دقيقة تجعل كل استخدام يشعر بالتميز والاحترافية.",
-      bullets: [
-        "تصميم فاخر ومتطور",
-        "جودة عالية ومتانة",
-        "مناسب للمساحات العصرية",
-        "تجربة استخدام متميزة"
-      ],
-      ad: "استمتع بتجربة فاخرة تجمع بين الأداء المميز والهيكلية الأنيقة."
-    },
-    bold: {
-      headline: "{productName} بقوة وأداء لا يتوقف",
-      description:
-        "{productName} تم تصميمه ليمنحك قوة وأداء مستقر في كل لحظة. مناسب لمن يبحث عن حل عملي، موثوق، ومناسب للاستخدام اليومي في بيئة سريعة ومتطلبة.",
-      bullets: [
-        "أداء قوي وثابت",
-        "مناسب للاستخدام المستمر",
-        "تصميم عملي وقوي",
-        "حل موثوق لكل يوم"
-      ],
-      ad: "قوة، موثوقية، وأداء مستقر في كل استخدام."
-    },
-    friendly: {
-      headline: "{productName} سهل الاستخدام ومريح في كل يوم",
-      description:
-        "{productName} يقدم تجربة بسيطة ومريحة تناسبك في كل استخدام. من خلال تصميمه العملي ووظائفه المفيدة، يساعدك على إنجاز المهام بسهولة وراحة في حياتك اليومية.",
-      bullets: [
-        "سهل الاستخدام",
-        "مريح وعملي",
-        "مناسب للعائلة والمكتب",
-        "يوفر وقتك وجهدك"
-      ],
-      ad: "حل عملي ومريح يجعل يومك أسهل وأكثر سلاسة."
-    },
-    luxury: {
-      headline: "{productName} بتفاصيل فاخرة وتجربة استثنائية",
-      description:
-        "{productName} يجمع بين الفخامة والوظائف العملية، ليمنحك تجربة خاصة تليق بالأسلوب الراقي. تم تصميمه بعناية لتضيف لمسة احترافية إلى كل روتين يومي أو مساحة منزلية.",
-      bullets: [
-        "تجربة فاخرة ومميزة",
-        "تفاصيل دقيقة وجودة عالية",
-        "مناسب للذوق الراقي",
-        "تصميم أنيق ومميز"
-      ],
-      ad: "اكتشف مستوى جديد من الفخامة والراحة مع {productName}."
-    }
-  },
-  en: {
-    professional: {
-      headline: "{productName} built for reliable everyday performance",
-      description:
-        "{productName} is designed to deliver smooth, dependable performance for daily use. It combines practical design, efficient functionality, and strong value to support modern lifestyles and professional routines.",
-      bullets: [
-        "Reliable day-to-day performance",
-        "Simple and practical design",
-        "Built for everyday use",
-        "Strong value and usability"
-      ],
-      ad: "A practical solution that makes everyday tasks easier and more efficient."
-    },
-    premium: {
-      headline: "{productName} with a refined, premium finish",
-      description:
-        "{productName} offers a premium experience with a modern look, durable build, and thoughtful design. It is crafted for people who value both style and functionality in their everyday essentials.",
-      bullets: [
-        "Premium design and finish",
-        "High-quality materials",
-        "Stylish and functional",
-        "Built for elevated everyday use"
-      ],
-      ad: "Upgrade your routine with a premium upgrade that feels as good as it looks."
-    },
-    bold: {
-      headline: "{productName} delivers power and reliability",
-      description:
-        "{productName} is built to perform when it matters most. Whether at home, work, or on the move, it combines strength, efficiency, and reliability to help you stay productive and prepared.",
-      bullets: [
-        "Strong and dependable",
-        "Built for active lifestyles",
-        "Efficient and practical",
-        "Ready for everyday demands"
-      ],
-      ad: "Built for performance. Ready for every challenge."
-    },
-    friendly: {
-      headline: "{productName} made to feel easy and convenient",
-      description:
-        "{productName} is designed to make everyday life easier. With a simple layout, thoughtful features, and dependable performance, it helps you enjoy a smoother and more convenient experience every day.",
-      bullets: [
-        "Easy to use",
-        "Practical and convenient",
-        "Comfortable for daily routines",
-        "Designed for real life"
-      ],
-      ad: "A simple upgrade that brings more comfort and convenience to your day."
-    },
-    luxury: {
-      headline: "{productName} crafted for a refined lifestyle",
-      description:
-        "{productName} blends luxury, precision, and usability into one elegant design. With premium details and a modern finish, it brings sophistication to your daily routine while delivering reliable performance.",
-      bullets: [
-        "Luxury design details",
-        "Premium build quality",
-        "Elegant and functional",
-        "Made for elevated living"
-      ],
-      ad: "Design your space with a product that feels luxurious in every detail."
-    }
-  },
-  es: {
-    professional: {
-      headline: "{productName} pensado para un uso diario fiable",
-      description:
-        "{productName} está diseñado para ofrecer un rendimiento fluido y confiable en el día a día. Combina materiales de calidad, diseño práctico y facilidad de uso para adaptarse a un estilo de vida moderno.",
-      bullets: [
-        "Rendimiento confiable",
-        "Diseño sencillo y práctico",
-        "Ideal para uso diario",
-        "Gran relación calidad-precio"
-      ],
-      ad: "Una solución práctica que simplifica tu rutina diaria."
-    },
-    premium: {
-      headline: "{productName} con estilo premium y acabado refinado",
-      description:
-        "{productName} ofrece una experiencia premium con un diseño moderno y una calidad superior. Está pensado para quienes buscan combinar estilo, comodidad y desempeño en su día a día.",
-      bullets: [
-        "Estilo premium",
-        "Calidad superior",
-        "Diseño moderno",
-        "Experiencia mejorada"
-      ],
-      ad: "Eleva tu rutina con un producto que combina diseño y desempeño."
-    },
-    bold: {
-      headline: "{productName} con fuerza y rendimiento constante",
-      description:
-        "{productName} está construido para ofrecer potencia y fiabilidad en cada uso. Perfecto para quienes necesitan una solución sólida y eficiente en su día a día.",
-      bullets: [
-        "Rendimiento sólido",
-        "Diseño práctico",
-        "Fiabilidad constante",
-        "Ideal para uso activo"
-      ],
-      ad: "Potencia y fiabilidad para cada momento del día."
-    },
-    friendly: {
-      headline: "{productName} fácil de usar y cómodo",
-      description:
-        "{productName} está pensado para que cada experiencia sea simple, cómoda y eficiente. Su diseño práctico y sus funciones útiles lo convierten en una elección ideal para el uso diario.",
-      bullets: [
-        "Fácil de usar",
-        "Muy práctico",
-        "Comodidad diaria",
-        "Diseñado para la vida real"
-      ],
-      ad: "Una solución simple que hace tu día a día más cómodo."
-    },
-    luxury: {
-      headline: "{productName} con un estilo refinado y elegante",
-      description:
-        "{productName} combina lujo, precisión y utilidad en un diseño elegante. Creado para aportar un toque sofisticado a cada espacio y momento del día.",
-      bullets: [
-        "Diseño elegante",
-        "Detalles premium",
-        "Materiales de calidad",
-        "Estética sofisticada"
-      ],
-      ad: "Sumérgete en una experiencia de lujo con cada uso."
-    }
-  },
-  fr: {
-    professional: {
-      headline: "{productName} conçu pour un usage quotidien fiable",
-      description:
-        "{productName} a été pensé pour offrir une performance fluide et fiable au quotidien. Il associe design pratique, efficacité et qualité pour s’adapter au rythme de vie moderne.",
-      bullets: [
-        "Performance fiable",
-        "Design pratique",
-        "Idéal pour un usage quotidien",
-        "Grande valeur et simplicité"
-      ],
-      ad: "Une solution pratique qui simplifie chaque journée."
-    },
-    premium: {
-      headline: "{productName} au design premium et raffiné",
-      description:
-        "{productName} offre une expérience premium grâce à son design moderne, sa finition élégante et sa qualité supérieure. Il convient à ceux qui recherchent à la fois style et fonctionnalité.",
-      bullets: [
-        "Design premium",
-        "Qualité supérieure",
-        "Style moderne",
-        "Expérience améliorée"
-      ],
-      ad: "Améliorez votre quotidien avec un produit premium et élégant."
-    },
-    bold: {
-      headline: "{productName} pour des performances solides",
-      description:
-        "{productName} a été conçu pour garder une performance constante et fiable dans chaque situation. Il combine résistance, efficacité et praticité pour répondre aux besoins du quotidien.",
-      bullets: [
-        "Performance solide",
-        "Fiabilité constante",
-        "Pratique et efficace",
-        "Idéal pour un usage actif"
-      ],
-      ad: "Puissance, fiabilité et efficacité à chaque utilisation."
-    },
-    friendly: {
-      headline: "{productName} simple, pratique et agréable à utiliser",
-      description:
-        "{productName} facilite la vie quotidienne grâce à son design simple, son utilisation intuitive et ses fonctionnalités utiles. Il offre une expérience agréable et sans complications.",
-      bullets: [
-        "Simple à utiliser",
-        "Très pratique",
-        "Confort au quotidien",
-        "Conçu pour la vie réelle"
-      ],
-      ad: "Un petit ajout qui rend votre journée plus facile."
-    },
-    luxury: {
-      headline: "{productName} avec un esprit luxe et raffinement",
-      description:
-        "{productName} associe luxe, précision et élégance dans un design pensé pour les utilisateurs qui recherchent une expérience exclusive et raffinée au quotidien.",
-      bullets: [
-        "Détails luxueux",
-        "Qualité premium",
-        "Élégance moderne",
-        "Expérience raffinée"
-      ],
-      ad: "Apportez une touche de luxe à votre quotidien."
-    }
-  },
-  de: {
-    professional: {
-      headline: "{productName} für zuverlässige Alltagstauglichkeit",
-      description:
-        "{productName} wurde entwickelt, um im Alltag eine zuverlässige und reibungslose Leistung zu bieten. Es kombiniert praktisches Design, effiziente Funktionalität und guten Mehrwert für den modernen Alltag.",
-      bullets: [
-        "Zuverlässige Leistung",
-        "Praxisnahes Design",
-        "Ideal für den Alltag",
-        "Guter Mehrwert"
-      ],
-      ad: "Eine praktische Lösung, die Ihren Alltag einfacher macht."
-    },
-    premium: {
-      headline: "{productName} mit hochwertigem Premium-Design",
-      description:
-        "{productName} verbindet Premium-Qualität mit modernem Design und durchdachter Funktionalität. Es ist ideal für Menschen, die Stil und Alltagstauglichkeit gleichermaßen schätzen.",
-      bullets: [
-        "Premium-Design",
-        "Hohe Qualität",
-        "Modern und funktional",
-        "Für den Alltag mit Stil"
-      ],
-      ad: "Verbessern Sie Ihren Alltag mit einem Produkt, das aussieht und funktioniert wie Premium."
-    },
-    bold: {
-      headline: "{productName} mit starker Leistung und Zuverlässigkeit",
-      description:
-        "{productName} wurde für solide Leistung und zuverlässige Nutzung entwickelt. Ob zu Hause, im Büro oder unterwegs – es bietet starke Funktionalität und eine moderne, praktische Lösung.",
-      bullets: [
-        "Starke Leistung",
-        "Zuverlässig und robust",
-        "Einfache Nutzung",
-        "Für den Alltag geeignet"
-      ],
-      ad: "Leistung, Zuverlässigkeit und Alltagstauglichkeit in einem."
-    },
-    friendly: {
-      headline: "{productName} einfach zu bedienen und angenehm im Einsatz",
-      description:
-        "{productName} macht den Alltag einfacher. Mit einem praktischen Design und nützlichen Funktionen bietet es eine angenehme und unkomplizierte Nutzung für den täglichen Einsatz.",
-      bullets: [
-        "Einfach zu bedienen",
-        "Praxisnah und komfortabel",
-        "Für den täglichen Gebrauch",
-        "Für das echte Leben gedacht"
-      ],
-      ad: "Eine einfache Lösung, die Ihren Alltag angenehmer macht."
-    },
-    luxury: {
-      headline: "{productName} mit einem eleganten Luxus-Feeling",
-      description:
-        "{productName} verbindet Luxus, Präzision und Funktionalität in einem stilvollen Design. Es verleiht Ihren Alltag eine hochwertige und elegante Note ohne Kompromisse bei der Nutzung.",
-      bullets: [
-        "Elegantes Design",
-        "Premium-Details",
-        "Hochwertige Verarbeitung",
-        "Luxuriöse Alltagserfahrung"
-      ],
-      ad: "Bringen Sie mehr Luxus und Stil in Ihren Alltag."
-    }
-  },
-  pt: {
-    professional: {
-      headline: "{productName} projetado para desempenho confiável no dia a dia",
-      description:
-        "{productName} foi criado para oferecer desempenho suave e confiável no uso diário. Combina design prático, funcionalidade eficiente e valor real para quem busca qualidade no dia a dia.",
-      bullets: [
-        "Desempenho confiável",
-        "Design prático",
-        "Uso diário ideal",
-        "Excelente relação custo-benefício"
-      ],
-      ad: "Uma solução prática que torna o seu dia a dia mais eficiente."
-    },
-    premium: {
-      headline: "{productName} com acabamento premium e design refinado",
-      description:
-        "{productName} oferece uma experiência premium com aparência moderna, acabamento refinado e materiais de qualidade. Foi desenvolvido para quem valoriza conforto, estilo e performance.",
-      bullets: [
-        "Design premium",
-        "Qualidade superior",
-        "Estilo moderno",
-        "Experiência aprimorada"
-      ],
-      ad: "Eleve sua rotina com um produto que combina estilo e desempenho."
-    },
-    bold: {
-      headline: "{productName} com potência e confiabilidade",
-      description:
-        "{productName} foi criado para manter alto desempenho em qualquer situação. É uma solução forte, eficiente e prática para quem precisa de confiabilidade no uso diário.",
-      bullets: [
-        "Potência e confiabilidade",
-        "Uso diário eficiente",
-        "Design prático",
-        "Alta performance"
-      ],
-      ad: "Potência, confiabilidade e eficiência em um só produto."
-    },
-    friendly: {
-      headline: "{productName} fácil de usar e muito confortável",
-      description:
-        "{productName} foi pensado para facilitar a rotina do dia a dia com uma experiência simples, confortável e útil. Seu design prático torna o uso mais agradável e eficiente.",
-      bullets: [
-        "Fácil de usar",
-        "Muito prático",
-        "Conforto no dia a dia",
-        "Pensado para a vida real"
-      ],
-      ad: "Uma solução simples que torna sua rotina mais fácil e mais agradável."
-    },
-    luxury: {
-      headline: "{productName} com um toque premium e sofisticado",
-      description:
-        "{productName} combina sofisticação, precisão e funcionalidade em um design elegante. É a escolha perfeita para quem quer trazer luxo e praticidade para o dia a dia.",
-      bullets: [
-        "Detalhes premium",
-        "Qualidade superior",
-        "Design elegante",
-        "Experiência sofisticada"
-      ],
-      ad: "Adicione um toque de luxo à sua rotina com {productName}."
-    }
-  }
-};
-
-const toneLabels = {
-  ar: {
-    professional: "احترافي",
-    premium: "فاخر",
-    bold: "قوي",
-    friendly: "ودود",
-    luxury: "فاخر جدًا"
-  },
-  en: {
-    professional: "Professional",
-    premium: "Premium",
-    bold: "Bold",
-    friendly: "Friendly",
-    luxury: "Luxury"
-  },
-  es: {
-    professional: "Profesional",
-    premium: "Premium",
-    bold: "Fuerte",
-    friendly: "Amigable",
-    luxury: "Lujo"
-  },
-  fr: {
-    professional: "Professionnel",
-    premium: "Premium",
-    bold: "Audacieux",
-    friendly: "Amical",
-    luxury: "Luxe"
-  },
-  de: {
-    professional: "Professionell",
-    premium: "Premium",
-    bold: "Stark",
-    friendly: "Freundlich",
-    luxury: "Luxus"
-  },
-  pt: {
-    professional: "Profissional",
-    premium: "Premium",
-    bold: "Forte",
-    friendly: "Amigável",
-    luxury: "Luxo"
-  }
-};
-
-function buildOutput(productName, features, tone, language) {
-  const name = productName.trim() || "Premium Product";
-  const featList = features
-    .split("\n")
-    .map((item) => item.trim())
-    .filter(Boolean);
-
-  const finalFeatures = featList.length ? featList.slice(0, 4) : [
-    "High quality materials",
-    "Modern design",
-    "Easy to use",
-    "Reliable performance"
-  ];
-
-  const toneKey = tone || "professional";
-  const lang = templates[language] ? language : "en";
-  const template = templates[lang][toneKey] || templates.en.professional;
-
-  const headline = template.headline.replace(/{productName}/g, name);
-  const description = template.description.replace(/{productName}/g, name);
-  const ad = template.ad.replace(/{productName}/g, name);
-
-  const bullets = finalFeatures.map((item, idx) => {
-    const label = `${idx + 1}. ${item}`;
-    return label;
-  });
-
-  return {
-    headline,
-    description,
-    bullets,
-    ad,
-    toneLabel: toneLabels[lang][toneKey] || tone
-  };
+* {
+  box-sizing: border-box;
 }
 
-const form = document.getElementById("copyForm");
-const productNameInput = document.getElementById("productName");
-const featuresInput = document.getElementById("productFeatures");
-const toneSelect = document.getElementById("tone");
-const languageSelect = document.getElementById("language");
+:root {
+  --bg: #f3f5ff;
+  --bg-soft: #eef2ff;
+  --panel: #ffffff;
+  --panel-alt: #f8f9ff;
+  --primary: #4f46e5;
+  --primary-dark: #3933c9;
+  --secondary: #eef1ff;
+  --text: #171d2f;
+  --muted: #58627a;
+  --line: #e6eaf5;
+  --shadow: 0 20px 50px rgba(34, 43, 86, 0.12);
+  --radius: 22px;
+}
 
-const headlineOutput = document.getElementById("headlineOutput");
-const descriptionOutput = document.getElementById("descriptionOutput");
-const bulletsOutput = document.getElementById("bulletsOutput");
-const adOutput = document.getElementById("adOutput");
-const copyTextBtn = document.getElementById("copyTextBtn");
+html {
+  scroll-behavior: smooth;
+}
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(180deg, #f6f8ff 0%, #f3f5ff 100%);
+  color: var(--text);
+}
 
-  const productName = productNameInput.value;
-  const features = featuresInput.value;
-  const tone = toneSelect.value;
-  const language = languageSelect.value;
+img {
+  max-width: 100%;
+  display: block;
+}
 
-  const output = buildOutput(productName, features, tone, language);
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  headlineOutput.textContent = output.headline;
-  descriptionOutput.textContent = output.description;
-  bulletsOutput.innerHTML = output.bullets
-    .map((bullet) => `<li>${bullet}</li>`)
-    .join("");
-  adOutput.textContent = output.ad;
-});
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
 
-copyTextBtn.addEventListener("click", async () => {
-  const content = [
-    headlineOutput.textContent,
-    descriptionOutput.textContent,
-    Array.from(bulletsOutput.querySelectorAll("li"))
-      .map((li) => li.textContent)
-      .join("\n"),
-    adOutput.textContent
-  ].join("\n\n");
+.container {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
 
-  try {
-    await navigator.clipboard.writeText(content);
-    copyTextBtn.textContent = "Copied";
-    setTimeout(() => {
-      copyTextBtn.textContent = "Copy text";
-    }, 1300);
-  } catch (error) {
-    copyTextBtn.textContent = "Copy failed";
-    setTimeout(() => {
-      copyTextBtn.textContent = "Copy text";
-    }, 1300);
+.section {
+  padding: 88px 0;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(246, 248, 255, 0.8);
+  backdrop-filter: blur(22px);
+  border-bottom: 1px solid rgba(230, 234, 245, 0.9);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 76px;
+  gap: 16px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, var(--primary), #7c6dfd);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  box-shadow: 0 12px 26px rgba(79, 70, 229, 0.28);
+}
+
+.brand-name {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.main-nav,
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.main-nav {
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.link-btn {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  padding: 13px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  box-shadow: 0 18px 30px rgba(79, 70, 229, 0.22);
+}
+
+.btn-secondary {
+  background: white;
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.full {
+  width: 100%;
+}
+
+.hero {
+  padding: 76px 0 36px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  align-items: center;
+  gap: 42px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(79, 70, 229, 0.08);
+  color: var(--primary-dark);
+  border: 1px solid rgba(79, 70, 229, 0.13);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow.dark {
+  background: rgba(23, 29, 47, 0.04);
+  border-color: rgba(23, 29, 47, 0.09);
+  color: var(--text);
+}
+
+h1 {
+  margin: 18px 0 20px;
+  font-size: clamp(2.6rem, 4vw, 4.7rem);
+  line-height: 1.02;
+  letter-spacing: -0.06em;
+}
+
+.hero-copy p {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 620px;
+}
+
+.cta-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+
+.trust-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.trust-row div {
+  display: grid;
+  gap: 4px;
+}
+
+.trust-row strong {
+  font-size: 1.4rem;
+  letter-spacing: -0.04em;
+}
+
+.trust-row span {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.window {
+  width: min(100%, 500px);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.window-bar {
+  background: #f2f5fd;
+  border-bottom: 1px solid var(--line);
+  padding: 14px 16px;
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.dot.red { background: #ff6666; }
+.dot.amber { background: #ffcc66; }
+.dot.green { background: #58d68d; }
+
+.window-body {
+  padding: 22px 20px 20px;
+  display: grid;
+  gap: 14px;
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--secondary);
+  color: var(--primary-dark);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.mini-box {
+  background: rgba(243, 245, 255, 0.9);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.mini-label {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mini-box h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: -0.04em;
+}
+
+.mini-box p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.logos-strip {
+  background: rgba(255, 255, 255, 0.35);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+
+.logos-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--muted);
+  font-weight: 700;
+  flex-wrap: wrap;
+}
+
+.logo-list {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  color: rgba(23, 29, 47, 0.72);
+}
+
+.logo-list span {
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.section-head {
+  margin-bottom: 28px;
+}
+
+.section-head.center {
+  text-align: center;
+}
+
+.section-head.left {
+  text-align: left;
+}
+
+.section-head h2 {
+  margin: 16px 0 0;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  letter-spacing: -0.05em;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.feature-card,
+.use-case-card,
+.price-card,
+.faq-item,
+.generator-panel,
+.result-panel {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 16px 30px rgba(24, 31, 54, 0.04);
+}
+
+.feature-card {
+  padding: 24px 20px;
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 1.55rem;
+  background: rgba(79, 70, 229, 0.08);
+  margin-bottom: 16px;
+}
+
+.feature-card h3,
+.use-case-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+.feature-card p,
+.use-case-card p,
+.faq-item p,
+.price-card li,
+.result-group p,
+.result-group li {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.generator-section {
+  background: linear-gradient(180deg, rgba(238, 241, 255, 0.35), rgba(255, 255, 255, 0.2));
+}
+
+.generator-grid {
+  display: grid;
+  grid-template-columns: 0.86fr 1.14fr;
+  gap: 22px;
+  align-items: flex-start;
+}
+
+.generator-panel,
+.result-panel {
+  padding: 28px;
+}
+
+.copy-form {
+  display: grid;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+label {
+  display: grid;
+  gap: 10px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fafbff;
+  color: var(--text);
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: rgba(79, 70, 229, 0.6);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.08);
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.result-box {
+  display: grid;
+  gap: 22px;
+  margin-top: 20px;
+}
+
+.result-group {
+  display: grid;
+  gap: 10px;
+}
+
+.result-label {
+  margin: 0;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+#headlineOutput,
+#descriptionOutput,
+#adOutput {
+  margin: 0;
+  line-height: 1.62;
+}
+
+#descriptionOutput,
+#adOutput {
+  color: var(--muted);
+}
+
+#bulletsOutput {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 8px;
+}
+
+.result-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.use-case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.use-case-card {
+  padding: 22px 20px;
+}
+
+.use-case-card span {
+  display: inline-flex;
+  margin-bottom: 12px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(79, 70, 229, 0.08);
+  color: var(--primary-dark);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.price-card {
+  padding: 28px 22px;
+  position: relative;
+}
+
+.price-card.highlight {
+  border-color: rgba(79, 70, 229, 0.28);
+  box-shadow: 0 20px 40px rgba(79, 70, 229, 0.12);
+  transform: translateY(-4px);
+}
+
+.popular {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--primary);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.plan-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-size: 2.5rem;
+  letter-spacing: -0.06em;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.price span {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.price-card ul {
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.price-card li {
+  position: relative;
+  padding-left: 24px;
+}
+
+.price-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.faq-list {
+  display: grid;
+  gap: 14px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  padding: 22px 24px;
+}
+
+.faq-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+}
+
+.site-footer {
+  padding: 18px 0 30px;
+}
+
+.footer-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  color: var(--muted);
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  font-weight: 800;
+}
+
+@media (max-width: 960px) {
+  .feature-grid,
+  .pricing-grid,
+  .use-case-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-});
 
-const initialOutput = buildOutput(
-  productNameInput.value,
-  featuresInput.value,
-  toneSelect.value,
-  languageSelect.value
-);
-headlineOutput.textContent = initialOutput.headline;
-descriptionOutput.textContent = initialOutput.description;
-bulletsOutput.innerHTML = initialOutput.bullets
-  .map((bullet) => `<li>${bullet}</li>`)
-  .join("");
-adOutput.textContent = initialOutput.ad;
+  .hero-grid,
+  .generator-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
-productNameInput.addEventListener("input", () => {
-  const output = buildOutput(
-    productNameInput.value,
-    featuresInput.value,
-    toneSelect.value,
-    languageSelect.value
-  );
-  headlineOutput.textContent = output.headline;
-  descriptionOutput.textContent = output.description;
-  bulletsOutput.innerHTML = output.bullets.map((bullet) => `<li>${bullet}</li>`).join("");
-  adOutput.textContent = output.ad;
-});
+@media (max-width: 720px) {
+  .main-nav {
+    display: none;
+  }
 
-featuresInput.addEventListener("input", () => {
-  const output = buildOutput(
-    productNameInput.value,
-    featuresInput.value,
-    toneSelect.value,
-    languageSelect.value
-  );
-  headlineOutput.textContent = output.headline;
-  descriptionOutput.textContent = output.description;
-  bulletsOutput.innerHTML = output.bullets.map((bullet) => `<li>${bullet}</li>`).join("");
-  adOutput.textContent = output.ad;
-});
+  .nav-wrap {
+    justify-content: space-between;
+  }
 
-toneSelect.addEventListener("change", () => {
-  const output = buildOutput(
-    productNameInput.value,
-    featuresInput.value,
-    toneSelect.value,
-    languageSelect.value
-  );
-  headlineOutput.textContent = output.headline;
-  descriptionOutput.textContent = output.description;
-  bulletsOutput.innerHTML = output.bullets.map((bullet) => `<li>${bullet}</li>`).join("");
-  adOutput.textContent = output.ad;
-});
+  .feature-grid,
+  .pricing-grid,
+  .use-case-grid,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
 
-languageSelect.addEventListener("change", () => {
-  const output = buildOutput(
-    productNameInput.value,
-    featuresInput.value,
-    toneSelect.value,
-    languageSelect.value
-  );
-  headlineOutput.textContent = output.headline;
-  descriptionOutput.textContent = output.description;
-  bulletsOutput.innerHTML = output.bullets.map((bullet) => `<li>${bullet}</li>`).join("");
-  adOutput.textContent = output.ad;
-});
+  .cta-row {
+    flex-direction: column;
+  }
 
+  .cta-row .btn,
+  .nav-actions .btn {
+    width: 100%;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .trust-row {
+    gap: 14px 26px;
+  }
+
+  .logos-wrap {
+    justify-content: center;
+  }
+
+  .window {
+    width: 100%;
+  }
+}
